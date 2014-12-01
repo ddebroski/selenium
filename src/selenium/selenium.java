@@ -2,14 +2,10 @@ package selenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.Select;
 
-/**
- *
- * @author LENOVO
- */
+
+
 public class selenium {
 
     /**
@@ -18,25 +14,31 @@ public class selenium {
     public static void main(String[] args) {
         //Executa navegador no caso Firefox
         WebDriver driver = new FirefoxDriver();
+        // Acessar o Site
+        driver.get ("http://www.tanafesta.com.br/");
+      
+    driver.findElement(By.xpath("//ul[@id='menu']/li[7]/a/cufon[2]/canvas")).click();
+    driver.findElement(By.id("nome")).clear();
+    driver.findElement(By.id("nome")).sendKeys("jacó");
+    driver.findElement(By.id("nome")).clear();
+    driver.findElement(By.id("nome")).sendKeys("jacós");
+    driver.findElement(By.id("email")).clear();
+    driver.findElement(By.id("email")).sendKeys("Jacos.jejeviski");
+    driver.findElement(By.id("email")).clear();
+    driver.findElement(By.id("email")).sendKeys("Jacos.jejeviski@yahoo.com.br");
+    driver.findElement(By.id("fone")).clear();
+    driver.findElement(By.id("fone")).sendKeys("99999999");
+    driver.findElement(By.id("cidade")).clear();
+    driver.findElement(By.id("cidade")).sendKeys("Tio do Campo");
+    driver.findElement(By.id("uf")).clear();
+    driver.findElement(By.id("uf")).sendKeys("sc");
+    driver.findElement(By.id("mensagem")).clear();
+    driver.findElement(By.id("mensagem")).sendKeys("Muuito bacana o Site só faltou minha foto.");
+    driver.findElement(By.id("enviar")).click();
+     }
+   
+   
 
-driver.get("http://www.facebook.com/");
-
-        //email do login
-        WebElement campoDeTexto = driver.findElement(By.id("email"));
-        campoDeTexto.sendKeys("digite seu email aqui");
-        
-        //Coloca a senha do login
-        WebElement campoDeTexto2 = driver.findElement(By.id("pass"));
-        campoDeTexto2.sendKeys("digite sua senha aqui");
-         
-        driver.findElement(By.id("u_0_l")).click();    
-        
-          Thread.sleep(10000);
-        
-         //escreve no Teste de Selenium          
-        WebElement campoTexto4 = driver.findElement(By.id("u_0_w"));
-        campoTexto4.sendKeys("Teste de Selenium Aula 01 12 2014");
-        campoTexto4.submit();
-           
-    }
 }
+
+
